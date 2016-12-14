@@ -1,5 +1,5 @@
 
-package com.ruoxu.slidebar;
+package com.ruoxu.slidebar.util;
 import android.content.Context;
 
 public class DensityUtil {

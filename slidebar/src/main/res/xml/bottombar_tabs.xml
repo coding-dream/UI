@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tabs>
 <tab
-    id="@+id/conversations"
+    id="@+id/message"
     icon="@mipmap/ic_conversation_selected_2"
-    title="消息"/>
+    title="@string/messageStr"/>
 <tab
     id="@+id/contacts"
     icon="@mipmap/ic_contact_selected_2"
-    title="联系人"/>
+    title="@string/contactStr"/>
 <tab
     id="@+id/dynamic"
     icon="@mipmap/ic_plugin_selected_2"
-    title="动态"/>
+    title="@string/DynamicStr"/>
 </tabs>

@@ -23,7 +23,7 @@
             </android.support.v7.widget.RecyclerView>
         </android.support.v4.widget.SwipeRefreshLayout>
 
-        <com.itheima.leon.qqdemo.widget.SlideBar
+        <com.ruoxu.slidebar.view.SlideBar
             android:id="@+id/slide_bar"
             android:layout_width="20dp"
             android:layout_height="match_parent"
@@ -31,7 +31,7 @@
 
         <TextView
             android:id="@+id/section"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:background="@drawable/ease_show_head_toast_bg"
             android:layout_gravity="center"

@@ -4,8 +4,8 @@ import android.view.View;
 
 import com.ruoxu.slidebar.R;
 
-public class DynamicFragment extends BaseFragment {
-    public static final String TAG = "DynamicFragment";
+public class MessageFragment extends BaseFragment {
+    public static final String TAG = MessageFragment.class.getSimpleName();
 
 
     @Override
@@ -16,7 +16,7 @@ public class DynamicFragment extends BaseFragment {
     @Override
     protected int getLayoutId() {
 
-        return R.layout.fragment_dynamic;
+        return R.layout.fragment_messages;
     }
 
 }

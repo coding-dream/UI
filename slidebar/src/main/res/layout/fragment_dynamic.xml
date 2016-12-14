@@ -6,5 +6,9 @@
     android:background="#00f"
     android:orientation="vertical">
 
+    <TextView
+        android:text="会话"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

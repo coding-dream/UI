@@ -4,13 +4,13 @@ package com.ruoxu.slidebar.factory;
 import com.ruoxu.slidebar.R;
 import com.ruoxu.slidebar.fragment.BaseFragment;
 import com.ruoxu.slidebar.fragment.ContactFragment;
-import com.ruoxu.slidebar.fragment.ConversationFragment;
+import com.ruoxu.slidebar.fragment.MessageFragment;
 import com.ruoxu.slidebar.fragment.DynamicFragment;
 
 import java.util.HashMap;
 
 public class FragmentFactory {
-    public static final String TAG = "FragmentFactory";
+    public static final String TAG = FragmentFactory.class.getSimpleName();
 
     private static FragmentFactory sFragmentFactory;
 
@@ -31,8 +31,8 @@ public class FragmentFactory {
         BaseFragment fragment = hashMap.get(what);
         if (fragment == null) {
             switch (what) {
-                case R.id.conversations:
-                    fragment = new ConversationFragment();
+                case R.id.message:
+                    fragment = new MessageFragment();
                     break;
                 case R.id.contacts:
                     fragment = new ContactFragment();

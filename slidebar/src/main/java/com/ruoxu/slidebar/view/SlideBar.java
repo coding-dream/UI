@@ -1,4 +1,4 @@
-package com.ruoxu.slidebar;
+package com.ruoxu.slidebar.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,6 +8,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.ruoxu.slidebar.R;
+import com.ruoxu.slidebar.util.DensityUtil;
 
 
 /**

@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateUnreadCount(int count) {
 
-        BottomBarTab bottomBar = mBottomBar.getTabWithId(R.id.conversations);
+        BottomBarTab bottomBar = mBottomBar.getTabWithId(R.id.message);
         bottomBar.setBadgeCount(count);
     }
 
