@@ -5,9 +5,9 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.ruoxu.ui"
-        minSdkVersion 9
-        targetSdkVersion 23
+        applicationId "com.ruoxu.slidebar"
+        minSdkVersion 11
+        targetSdkVersion 15
         versionCode 1
         versionName "1.0"
     }
@@ -22,4 +22,8 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.0.0'
+
+    compile 'com.roughike:bottom-bar:2.0.2'
+    compile 'com.android.support:cardview-v7:23.0.0'
+
 }
