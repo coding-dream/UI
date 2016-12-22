@@ -207,7 +207,8 @@ public class GalleryRecyclerView extends RecyclerView {
             //设置透明度
             child.setAlpha(alpha);
 
-            child.requestLayout();
+            //当view确定自身已经不再适合现有的区域时，该view本身调用这个方法要求parent 重新调用他的 onMeasure onLayout来对重新设置自己child的位置。
+            child.requestLayout();//requestLayout则是请求Parent重新布局 child View
         }
     }
 
