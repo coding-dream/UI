@@ -5,13 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.zhy.adapter.recyclerview.CommonAdapter;
-import com.zhy.adapter.recyclerview.base.ViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private List<Item> mlist=new ArrayList<>();
@@ -44,24 +41,32 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         mGalleryRecyclerView = (GalleryRecyclerView) findViewById(R.id.gallery);
         mPosition = (TextView) findViewById(R.id.position);
-        mGalleryRecyclerView.setCanAlpha(true);
-        mGalleryRecyclerView.setCanScale(true);
-        mGalleryRecyclerView.setBaseScale(0.5f);
-        mGalleryRecyclerView.setBaseAlpha(0.95f);
 
-        mGalleryRecyclerView.setAdapter(new CommonAdapter<Item>(this, R.layout.item_gallery, mlist) {
+        mGalleryRecyclerView.setTouchDownlistem(new GalleryRecyclerView.TouchDownListem() {
             @Override
-            public void convert(ViewHolder holder, final Item s, int position) {
-                holder.setText(R.id.name, s.getName());
-                holder.setImageResource(R.id.profile_image,s.getImg());
-                holder.getView(R.id.item_btn).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(mContext, s.getName(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+            public void onTouchDown() {
+                Log.d("MainActivity", "onTouchDown");
             }
         });
+
+
+        mGalleryRecyclerView.setAdapter(new ItemAdapter(this,mlist));
+
+//        mGalleryRecyclerView.setAdapter(new CommonAdapter<Item>() {
+//            @Override
+//            protected void convert(ViewHolder holder, final Item item, int position) {
+//                holder.setText(R.id.name, item.getName());
+//                holder.setImageResource(R.id.profile_image,item.getImg());
+//                holder.getView(R.id.item_btn).setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        Toast.makeText(mContext, item.getName(), Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//            }
+//        });
+
+
         mGalleryRecyclerView.setOnViewSelectedListener(new GalleryRecyclerView.OnViewSelectedListener() {
             @Override
             public void onSelected(View view, final int position) {
@@ -69,5 +74,11 @@ public class MainActivity extends AppCompatActivity {
                 mPosition.setText(mlist.get(position).getName());
             }
         });
+    }
+
+    public void select(View view) {
+        int position = new Random().nextInt(10);
+        Log.d("MainActivity", "position " + position);
+        mGalleryRecyclerView.setSelectPosition(position);
     }
 }
